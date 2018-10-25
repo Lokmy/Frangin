@@ -1,0 +1,50 @@
+img.superbg {
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+}
+
+button {
+  margin: 5px;
+}
+
+.login-container {
+  width: 50%;
+  margin: auto;
+  @include make-container();
+  color: white;
+  vertical-align: bottom;
+}
+
+.login-row {
+  @include make-row();
+}
+
+.login-content-main {
+  @include make-col-ready();
+
+  @include media-breakpoint-up(sm) {
+    @include make-col(6);
+  }
+  @include media-breakpoint-up(lg) {
+    @include make-col(8);
+  }
+}
+
+.login-content-secondary {
+  @include make-col-ready();
+
+  @include media-breakpoint-up(sm) {
+    @include make-col(6);
+  }
+  @include media-breakpoint-up(lg) {
+    @include make-col(4);
+  }
+}
+
+.centreVerticalement {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
