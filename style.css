@@ -1,50 +1,88 @@
+body { 
+  display: flex; /* permet de transformer les fils direct en flexbox */
+  flex-flow: column; /* permet d'utiliser une structure verticale */
+  min-height:100vh; /* hauteur minimum égale à la hauteur de la vue */
+  overflow: hidden; /* interdit le scroll */
+}
+
+header, footer { /* pas besoin de style différent ici */
+  background: #fefefe;
+  padding: 0 20%;
+  min-height: 15vh; /* prend minimum 20% de la taille de la vue  */
+
+  display: flex;              /* centrer les fils */
+  justify-content: center;    /* horizontalement */
+  align-items: center;        /* & verticalement */
+
+  flex-direction: column; /* pour afficher le titre & la barre */
+
+  opacity: .5;
+  background: #fff;
+}
+
+hr { /* style de la barre */
+  background: #c9c9c9;
+  width: 100%;
+}
+
+main {
+  flex: 2 ; /* permet à l'élément de prendre la place restante */
+
+  display: flex;              /*     centrer     */
+  justify-content: center;    /* horizontalement */
+  align-items: center;        /* & verticalement */
+  
+  flex-direction: column; /* range les fils (buttons) verticalement plutôt qu'horizontalement */
+}
+
+button { /* style des boutons  */
+  height: 40px;
+  width: 40%;
+  margin-bottom: 20px;
+  background: #c9c9c9;
+  border: 0;
+  border-radius: 5px;
+  font-weight: bolder;
+  font-size: 1.25em;
+  background: #fff;
+  opacity: .8;
+}
+
+button:active {
+  background: rgb(167, 167, 167);
+  opacity: .8;
+}
+
 img.superbg {
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:-1;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
 }
 
-button {
-  margin: 5px;
+.col-lg-offset-1 {
+  margin-left: 8.333%;
+}
+.col-lg-offset-3 {
+  margin-left: 25%;
+}
+.col-lg-offset-4 {
+  margin-left: 33.333%;
+}
+.col-lg-offset-6 {
+  margin-left: 50%;
 }
 
-.login-container {
-  width: 50%;
-  margin: auto;
-  @include make-container();
-  color: white;
-  vertical-align: bottom;
+.page-header {
+  padding-bottom: 9px;
+  margin: 30px 0 20px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
 }
 
-.login-row {
-  @include make-row();
-}
-
-.login-content-main {
-  @include make-col-ready();
-
-  @include media-breakpoint-up(sm) {
-    @include make-col(6);
-  }
-  @include media-breakpoint-up(lg) {
-    @include make-col(8);
-  }
-}
-
-.login-content-secondary {
-  @include make-col-ready();
-
-  @include media-breakpoint-up(sm) {
-    @include make-col(6);
-  }
-  @include media-breakpoint-up(lg) {
-    @include make-col(4);
-  }
-}
-
-.centreVerticalement {
-  display: inline-block;
-  vertical-align: middle;
-  float: none;
+.page-footer {
+  padding-bottom: 9px;
+  margin: 20px 0 30px;
+  border-top: 1px solid #eee;
+  text-align: center;
 }
